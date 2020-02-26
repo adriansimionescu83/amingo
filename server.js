@@ -15,8 +15,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Connect to the database
-const dbURL = "mongodb+srv://admin:P@ssw0rd@cluster0-usoyf.mongodb.net/test?retryWrites=true&w=majority"
-mongoose.connect(
+const dbURL = process.env.DB_URL;
+    mongoose.connect(
     dbURL,
     {useNewUrlParser: true, useUnifiedTopology: true}
 ).then(
@@ -45,7 +45,7 @@ app.get(
     }
 );
 app.listen(
-    3010,
+    process.env.DB_URL|| 3010,
     ()=>{
         console.log('you are connected');
     }
