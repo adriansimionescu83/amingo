@@ -41,12 +41,12 @@ app.use(
 app.get(
     '*',
     (req, res)=>{
-        res.send("<h1 style='color:black'>404</h1>");
+        res.send("<h1 style='color:black'>Home</h1>");
     }
 );
-app.listen(
-    process.env.PORT || 3010,
-    ()=>{
-        console.log('you are connected');
-    }
-)
+    app.listen(
+        process.env.PORT || 3010,
+        ()=>{
+            console.log('you are connected');
+        }
+    )
