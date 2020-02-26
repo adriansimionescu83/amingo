@@ -45,7 +45,7 @@ app.get(
     }
 );
 app.listen(
-    process.env.DB_URL|| 3010,
+    process.env.DB_URL || 3010,
     ()=>{
         console.log('you are connected');
     }
