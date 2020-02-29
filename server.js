@@ -10,12 +10,15 @@ const cors = require('cors');
  const UserRoutes = require('./routes/User.js');
  const FeedRoutes = require('./routes/Feed.js');
 
+ // this will be keys_work or keys_prod depending on which environment you're in
+ const keys = require('./config/keys'); 
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
 
 // Connect to the database
-const dbURL = process.env.DB_URL;
+const dbURL = keys.DB_URL;
     mongoose.connect(
     dbURL,
     {useNewUrlParser: true, useUnifiedTopology: true}
